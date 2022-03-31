@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import fileUpload from 'express-fileupload';
 import dotenv from 'dotenv';
+import { pricingCareer } from './data/pricing';
 
 dotenv.config();
 
@@ -21,5 +22,8 @@ const firstRouter = (req: Request, res: Response) => {
 };
 
 app.get('/', firstRouter);
+app.get('/pricing/career', (req: Request, res: Response) => {
+  res.json(pricingCareer);
+});
 
 app.listen(PORT, () => console.log(`APP IS LISTENING ON ${PORT}`));

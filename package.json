@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node ./build/app.js",
+    "start": "rm -rf ./build && tsc && node ./build/app.js",
     "dev": "nodemon ./build/app.js",
     "watch": "tsc --watch"
   },
